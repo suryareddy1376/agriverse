@@ -1,0 +1,58 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env
+
+# Data files (Exclude raw, interim, and processed large datasets)
+# (Keeps the directory structure intact if you want, but ignores the heavy files)
+data/raw/**/*.csv
+data/raw/**/*.geojson
+data/raw/**/*.json
+data/interim/**/*.csv
+data/interim/**/*.geojson
+data/interim/**/*.json
+data/processed/**/*.csv
+data/processed/**/*.parquet
+data/model_ready/**/*.csv
+data/model_ready/**/*.parquet
+
+# Model weights and artifacts
+models/**/*.pth
+models/**/*.pt
+models/**/*.joblib
+models/**/*.bin
+artifacts/**/*.csv
+artifacts/**/*.html
+artifacts/**/*.png
+artifacts/**/*.jpg
+
+# PyTorch Lightning / Checkpoints
+.ckpt
+lightning_logs/
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Logs
+*.log
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

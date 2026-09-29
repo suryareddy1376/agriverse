@@ -1,0 +1,39 @@
+
+geography_tamil_nadu:
+  name: "Tamil Nadu District Boundaries (2011)"
+  provider: "geohacker/india (GitHub)"
+  url: "https://raw.githubusercontent.com/geohacker/india/master/district/india_district.geojson"
+  download_date: "2026-09-29"
+  variables: ["geometry", "district name"]
+
+yield_tamil_nadu_rice:
+  name: "India Crop Production Dataset (1997-2015)"
+  provider: "Ministry of Agriculture and Farmers Welfare (via Kaggle/GitHub)"
+  url: "https://raw.githubusercontent.com/SourajitaDewasi/Crop-Yield-Prediction-in-India-using-ML/master/crop_production.csv"
+  download_date: "2026-09-29"
+  variables: ["state", "district", "year", "season", "crop", "area", "production"]
+  processing_steps: 
+    - Filtered for state=Tamil Nadu, crop=Rice
+    - Yield calculated as production / area
+
+weather_tamil_nadu:
+  name: "NASA POWER Daily Meteorology"
+  provider: "NASA Langley Research Center"
+  url: "https://power.larc.nasa.gov/"
+  download_date: "2026-09-29"
+  coverage: "Tamil Nadu district centroids, 1997-2013"
+  variables: ["T2M", "T2M_MIN", "T2M_MAX", "PRECTOTCORR", "RH2M", "ALLSKY_SFC_SW_DWN", "WS2M"]
+  processing_steps: 
+    - Downloaded daily point data for district centroids
+    - Missing values (-999) handled
+    - Aggregated to monthly mean/sum
+
+sentinel2_ndvi:
+  name: "SYNTHETIC_DEMO Sentinel-2 proxy"
+  provider: "Generated locally"
+  url: "N/A"
+  download_date: "2026-09-29"
+  variables: ["ndvi_mean", "ndvi_max", "ndvi_min", "ndvi_std", "ndvi_valid_observation_count", "is_synthetic_demo"]
+  processing_steps: 
+    - Generated synthetically from weather variables due to 1997-2013 temporal mismatch with Sentinel-2 launch.
+    - EXPLICITLY LABELLED AS SYNTHETIC DEMO.

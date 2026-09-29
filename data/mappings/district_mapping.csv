@@ -1,0 +1,6 @@
+source_name,canonical_name,state,valid_from,valid_to,mapping_reason
+KANCHIPURAM,KANCHEEPURAM,TAMIL NADU,,,Spelling variation
+THE NILGIRIS,NILGIRIS,TAMIL NADU,,,Prefix difference
+TUTICORIN,THOOTHUKUDI,TAMIL NADU,,,Historical name vs Official name
+TIRUCHIRAPPALLI,TIRUCHCHIRAPPALLI,TAMIL NADU,,,Spelling variation
+TIRUNELVELI,TIRUNELVELI KATTABO,TAMIL NADU,,,Legacy name in GeoJSON
